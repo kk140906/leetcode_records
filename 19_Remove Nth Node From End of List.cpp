@@ -55,7 +55,7 @@
 class Solution {
 public:
     ListNode *removeNthFromEnd(ListNode *head, int n) {
-//#define SOLUTION_3
+#define SOLUTION_2
 #ifdef SOLUTION_1
         // 顺序容器存储所有结点的地址，并记录结点个数
 
@@ -142,9 +142,9 @@ private:
 
 
 int main(int argc, char **argv) {
-    ListNode *head = CreateList({1});
+    ListNode *head = CreateList<ListNode>({1,2,3,4,5});
     std::cout << "init: " << head << std::endl;
-    ListNode *result = Solution().removeNthFromEnd(head, 1);
+    ListNode *result = Solution().removeNthFromEnd(head, 2);
     std::cout << "result: " << result << std::endl;
     return 0;
 }
