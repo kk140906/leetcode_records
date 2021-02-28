@@ -63,13 +63,11 @@ public:
         while (begin != end) {
             tail = tail->next = new ListNode(*begin++);
         }
-        SetListType(ListType::Forward);
         return head->next;
     }
 
-#define USING_STL
-
     ListNode *mergeTwoLists(ListNode *l1, ListNode *l2) {
+#define  USING_STL
 #ifdef USING_STL
         vector<int> vi;
         while (l1) {
@@ -98,10 +96,12 @@ public:
         while(l1) {
             tail->next = new ListNode(l1->val);
             l1 = l1->next;
+            tail = tail->next;
         }
         while(l2) {
             tail->next = new ListNode(l2->val);
             l2 = l2->next;
+            tail = tail->next;
         }
         return head->next;
 #endif
@@ -110,8 +110,8 @@ public:
 //leetcode submit region end(Prohibit modification and deletion)
 
 int main() {
-    auto head1 = CreateList({1, 2, 4, 5, 8, 9});
-    auto head2 = CreateList({1, 3, 4});
+    auto head1 = CreateList<ListNode>({-9,3});
+    auto head2 = CreateList<ListNode>({5,7});
     Solution solution;
     auto merged = solution.mergeTwoLists(head1, head2);
     cout << merged;
