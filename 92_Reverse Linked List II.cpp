@@ -96,7 +96,7 @@ private:
 //leetcode submit region end(Prohibit modification and deletion)
 
 int main(int argc, char **argv) {
-    ListNode *head = CreateList({1, 2, 3, 4, 5, 6});
+    ListNode *head = CreateList<ListNode>({1, 2, 3, 4, 5, 6});
     std::cout << head << std::endl;
     ListNode *reversed_head = Solution().reverseBetween(head,4,7);
     std::cout << reversed_head << std::endl;
