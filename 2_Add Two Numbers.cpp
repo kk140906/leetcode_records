@@ -1,4 +1,4 @@
-//You are given two non-empty linked lists representing two non-negative integer
+﻿//You are given two non-empty linked lists representing two non-negative integer
 //s. The digits are stored in reverse order, and each of their nodes contains a si
 //ngle digit. Add the two numbers and return the sum as a linked list. 
 //
@@ -63,7 +63,7 @@ public:
 #define USING_RECURSIVE
 
     ListNode *addTwoNumbers(ListNode *l1, ListNode *l2) {
-        ListNode *head = new ListNode, *tail = head;
+        ListNode *head = new ListNode(), *tail = head;
 #ifndef USING_RECURSIVE
         // 关键点1：每次循环进行两个1位数求和操作，同时必须考虑上一次计算是否存在进位
         // 关键点2：每一次求和操作都可能发生进位，因此循环终止的条件是两个链表中都没有元素且最后一个元素计算完毕后也没有发生进位
@@ -97,8 +97,8 @@ public:
 //leetcode submit region end(Prohibit modification and deletion)
 
 int main() {
-    auto l1 = CreateList({9});
-    auto l2 = CreateList({9});
+    auto l1 = CreateList<ListNode>({9});
+    auto l2 = CreateList<ListNode>({9});
     Solution solution;
     cout << solution.addTwoNumbers(l1, l2);
     return 0;
