@@ -73,7 +73,7 @@ public:
 
 //leetcode submit region end(Prohibit modification and deletion)
 int main() {
-    auto head = CreateList({1, 3, 4, 6, 7, 8});
+    auto head = CreateList<ListNode>({1, 3, 4, 6, 7, 8});
     Solution solution;
     std::cout << solution.reverseList(head->next);
     return 0;
