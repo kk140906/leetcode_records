@@ -14,9 +14,12 @@
 #include <map>
 #include <unordered_map>
 #include <set>
+#include <stack>
 #include <unordered_set>
 #include <type_traits>
 #include <functional>
+#include <thread>
+#include <algorithm>
 
 namespace common {
     using namespace std::chrono;
@@ -36,21 +39,20 @@ namespace common {
             return std::move(vec);
         }
 
-
     private:
         std::default_random_engine e;
 
-        template<typename T_>
-        std::enable_if_t<std::is_integral<T_>::value, T_>
-        generate_(T_ min, T_ max) {
-            std::uniform_int_distribution<T_> u(min, max);
+        template<typename t_>
+        std::enable_if_t<std::is_integral<t_>::value, t_>
+        generate_(t_ min, t_ max) {
+            std::uniform_int_distribution<t_> u(min, max);
             return u(e);
         }
 
-        template<typename T_>
-        std::enable_if_t<std::is_floating_point<T_>::value, T_>
-        generate_(T_ min, T_ max) {
-            std::uniform_real_distribution<T_> u_real(min, max);
+        template<typename t_>
+        std::enable_if_t<std::is_floating_point<t_>::value, t_>
+        generate_(t_ min, t_ max) {
+            std::uniform_real_distribution<t_> u_real(min, max);
             return u_real(e);
         }
     };
