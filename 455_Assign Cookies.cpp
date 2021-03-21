@@ -74,15 +74,17 @@ public:
 
 int main(int argc, char **argv) {
 
+    vector<int> g{2, 3, 6, 3, 1}, s{1, 4, 5};
+
     Solution solution;
 
-    int running_times = 1000;
+    int running_times = 1;
     START_TIMESTAMP(tag);
     for (int i = 0; i < running_times; ++i) {
         /** 
          * critical test code
          */
-
+        cout << solution.findContentChildren(g, s) << endl;
     }
     END_TIMESTAMP(tag);
     cout << "\nprogram running time: "
